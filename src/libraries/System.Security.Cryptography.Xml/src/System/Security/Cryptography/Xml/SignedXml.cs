@@ -65,6 +65,7 @@ namespace System.Security.Cryptography.Xml
         public const string XmlDsigSHA256Url = "http://www.w3.org/2001/04/xmlenc#sha256";
         public const string XmlDsigRSASHA256Url = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
 
+
         // Yes, SHA384 is in the xmldsig-more namespace even though all the other SHA variants are in xmlenc. That's the standard.
         public const string XmlDsigSHA384Url = "http://www.w3.org/2001/04/xmldsig-more#sha384";
         public const string XmlDsigRSASHA384Url = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha384";
@@ -82,6 +83,13 @@ namespace System.Security.Cryptography.Xml
         public const string XmlDsigEnvelopedSignatureTransformUrl = "http://www.w3.org/2000/09/xmldsig#enveloped-signature";
         public const string XmlDecryptionTransformUrl = "http://www.w3.org/2002/07/decrypt#XML";
         public const string XmlLicenseTransformUrl = "urn:mpeg:mpeg21:2003:01-REL-R-NS:licenseTransform";
+
+
+        public const string XmlDsigECDSASHA1Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1";
+        public const string XmlDsigECDSASHA224Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha224";
+        public const string XmlDsigECDSASHA256Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256";
+        public const string XmlDsigECDSASHA384Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384";
+        public const string XmlDsigECDSASHA512Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512";
 
         //
         // public constructors
@@ -410,6 +418,11 @@ namespace System.Security.Cryptography.Xml
                 {
                     // Default to RSA-SHA256
                     SignedInfo.SignatureMethod ??= XmlDsigRSASHA256Url;
+                }
+                else if (key is ECDsa || key is ECDsaCng)
+                {
+                    // Default to ECDSA-SHA256
+                    SignedInfo.SignatureMethod ??= XmlDsigECDSASHA256Url;
                 }
                 else
                 {

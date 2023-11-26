@@ -400,6 +400,8 @@
     <Compile Include="System\Security\Cryptography\ECDiffieHellmanPublicKey.ExportParameters.cs" />
     <Compile Include="System\Security\Cryptography\ECDsa.cs" />
     <Compile Include="System\Security\Cryptography\ECDsa.Xml.cs" />
+    <Compile Include="System\Security\Cryptography\ECDsaSignatureDeformatter.cs" />
+    <Compile Include="System\Security\Cryptography\ECDsaSignatureFormatter.cs" />
     <Compile Include="System\Security\Cryptography\ECKeyXmlFormat.cs" />
     <Compile Include="System\Security\Cryptography\ECParameters.cs" />
     <Compile Include="System\Security\Cryptography\ECPoint.cs" />

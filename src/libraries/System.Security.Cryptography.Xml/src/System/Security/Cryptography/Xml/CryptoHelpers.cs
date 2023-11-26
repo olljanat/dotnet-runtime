@@ -44,6 +44,9 @@ namespace System.Security.Cryptography.Xml
                 "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" => new RSAPKCS1SHA256SignatureDescription(),
                 "http://www.w3.org/2001/04/xmldsig-more#rsa-sha384" => new RSAPKCS1SHA384SignatureDescription(),
                 "http://www.w3.org/2001/04/xmldsig-more#rsa-sha512" => new RSAPKCS1SHA512SignatureDescription(),
+                "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256" => new ECDsaSHA256SignatureDescription(),
+                "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384" => new ECDsaSHA384SignatureDescription(),
+                "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512" => new ECDsaSHA512SignatureDescription(),
                 _ => null,
             };
 

@@ -896,6 +896,25 @@ namespace System.Security.Cryptography
         public override void SetHashAlgorithm(string strName) { }
         public override void SetKey(System.Security.Cryptography.AsymmetricAlgorithm key) { }
     }
+    [System.Runtime.Versioning.UnsupportedOSPlatformAttribute("browser")]
+    public partial class ECDsaSignatureDeformatter : System.Security.Cryptography.AsymmetricSignatureDeformatter
+    {
+        public ECDsaSignatureDeformatter() { }
+        public ECDsaSignatureDeformatter(System.Security.Cryptography.AsymmetricAlgorithm key) { }
+        public override void SetHashAlgorithm(string strName) { }
+        public override void SetKey(System.Security.Cryptography.AsymmetricAlgorithm key) { }
+        public override bool VerifySignature(byte[] rgbHash, byte[] rgbSignature) { throw null; }
+    }
+    [System.Runtime.Versioning.UnsupportedOSPlatformAttribute("browser")]
+    public partial class ECDsaSignatureFormatter : System.Security.Cryptography.AsymmetricSignatureFormatter
+    {
+        public ECDsaSignatureFormatter() { }
+        public ECDsaSignatureFormatter(System.Security.Cryptography.AsymmetricAlgorithm key) { }
+        public override byte[] CreateSignature(byte[] rgbHash) { throw null; }
+        public override void SetHashAlgorithm(string strName) { }
+        public override void SetKey(System.Security.Cryptography.AsymmetricAlgorithm key) { }
+    }
+
     public abstract partial class ECAlgorithm : System.Security.Cryptography.AsymmetricAlgorithm
     {
         protected ECAlgorithm() { }
