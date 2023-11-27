@@ -83,6 +83,8 @@ namespace System.Security.Cryptography.Xml
         public const string XmlDecryptionTransformUrl = "http://www.w3.org/2002/07/decrypt#XML";
         public const string XmlLicenseTransformUrl = "urn:mpeg:mpeg21:2003:01-REL-R-NS:licenseTransform";
 
+        public const string XmlDsigECDSASHA256Url = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256";
+
         //
         // public constructors
         //
@@ -410,6 +412,11 @@ namespace System.Security.Cryptography.Xml
                 {
                     // Default to RSA-SHA256
                     SignedInfo.SignatureMethod ??= XmlDsigRSASHA256Url;
+                }
+                else if (key is ECDsaCng)
+                {
+                    // Default to ECDSA-SHA256
+                    SignedInfo.SignatureMethod ??= XmlDsigECDSASHA256Url;
                 }
                 else
                 {
